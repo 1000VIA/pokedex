@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import BestPokemon from "./BestPokemon";
 import CaughtPokemon from "./CaughtPokemon";
+import Clock from "./Clock";
 import "./App.css";
 
 //Method
@@ -17,6 +18,7 @@ function App() {
         pokemonNames={["Squirtle ", "Bulbasaur ", "Charmander ", "Pikachu "]}
       />
       <CaughtPokemon date={new Date().toLocaleDateString()} />
+      <Clock />
     </div>
   );
 }

@@ -4,31 +4,43 @@ class CaughtPokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      caughtPokemon: [],
+      pokemonNameInput: ""
     };
   }
+
+  componentDidUpdate() {
+    console.log("componentDidMount");
+  }
+
   catchPokemon = () => {
-    this.setState(previousState => {
-      return {
-        count: previousState.count + 1
-      };
-    });
+    let newCaughtPokemon = [].push(this.pokemonNameInput);
+    // this.setState(previousState => {
+    //   return {
+    //     caughtPokemon: previousState.caughtPokemon + 1
+    //   };
+    // });
   };
+
+  handleInputChange = event => {
+    this.setState({ pokemonNameInput: event.target.value });
+  };
+
   render() {
     return (
       <div>
         <p>
-          Caught: {this.state.count} Pokemon on {this.props.date}
+          Caught: {this.state.caughtPokemon.length} Pokemon on {this.props.date}
         </p>
+        <input
+          type="text"
+          value={this.state.pokemonNameInput}
+          onChange={this.handleInputChange}
+        />
         <button onClick={this.catchPokemon}>Catch Pokemon</button>
       </div>
     );
   }
 }
-// import React from "react";
-
-// const CaughtPokemon = props => {
-//   return <p>Caught 0 Pokemon on {props.date}</p>;
-// };
 
 export default CaughtPokemon;
