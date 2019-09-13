@@ -14,7 +14,13 @@ class CaughtPokemon extends Component {
   }
 
   catchPokemon = () => {
-    let newCaughtPokemon = [].push(this.pokemonNameInput);
+    if (this.state.pokemonNameInput !== "") {
+      let newCaughtPokemon = this.state.caughtPokemon.push(
+        this.state.pokemonNameInput
+      );
+      this.setState({ catchPokemon: newCaughtPokemon, pokemonNameInput: "" });
+    }
+
     // this.setState(previousState => {
     //   return {
     //     caughtPokemon: previousState.caughtPokemon + 1
@@ -37,7 +43,14 @@ class CaughtPokemon extends Component {
           value={this.state.pokemonNameInput}
           onChange={this.handleInputChange}
         />
-        <button onClick={this.catchPokemon}>Catch Pokemon</button>
+        <button type="button" onClick={this.catchPokemon}>
+          Catch Pokemon
+        </button>
+        <ul>
+          {this.state.caughtPokemon.map((myPokemon, index) => (
+            <li index={index}> {myPokemon} </li>
+          ))}
+        </ul>
       </div>
     );
   }
