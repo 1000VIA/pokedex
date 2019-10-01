@@ -32,9 +32,27 @@
     transform: rotate(360deg);
   }
 }
-ul {
-  text-align: center;
+
+nav{
+  background-color: #8800a3;
+  padding: 5px;
+  font-weight:  bolder;
+  font-size: 20px;
+}
+
+a{
+  color: white;
+}
+
+.pok {
+ display: flex;
   list-style: none;
+}
+
+.myList{
+  display:inline;
+  padding-left:3px;
+  padding-right:20px;
 }
 
 button {

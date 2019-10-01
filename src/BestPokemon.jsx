@@ -30,7 +30,7 @@ class BestPokemon extends Component {
             <span> Loading... 👽</span>
           ) : (
               this.state.pokemonNames.map(name => {
-                return <li>{name}</li>;
+                return <li className='nameP'>{name}</li>;
               })
             )}
         </ul>
