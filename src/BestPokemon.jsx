@@ -29,10 +29,10 @@ class BestPokemon extends Component {
           {this.state.isLoading ? (
             <span> Loading... 👽</span>
           ) : (
-            this.state.pokemonNames.map(name => {
-              return <li>{name}</li>;
-            })
-          )}
+              this.state.pokemonNames.map(name => {
+                return <li>{name}</li>;
+              })
+            )}
         </ul>
       </div>
     );
